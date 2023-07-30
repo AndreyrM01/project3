@@ -9,3 +9,7 @@ ul{
 li{
   list-style: none;
 }
+
+.form-container{
+  width: 45%;
+}
