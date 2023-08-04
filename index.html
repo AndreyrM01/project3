@@ -13,114 +13,116 @@
    <div class="form-container">
     <h1>Let us find the perfect pant for you</h1>
 
-    <form action="">
-      <h2>Where will you place your plant?</h2>
+    <div id="formPlants">
+      <legend>Where will you place your plant?</legend>
+     <form id="formLight">
       <ul>
         <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">Inside, with some indirect light</label>
+          <input type="radio" name="light" id="lowLight" class="input-form" required/>
+          <label for="lowLight">Inside, with some indirect light</label>
         </li>
         <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">Inside, with a lot indirect light</label>
+          <input type="radio" name="light" id="mediumLight" class="input-form" required/>
+          <label for="mediumLight">Inside, with a lot indirect light</label>
         </li>
         <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">Ouside</label>
+          <input type="radio" name="light" id="outside" class="input-form" required/>
+          <label for="outside">Ouside</label>
         </li>
       </ul>
-    </form>
+     </form>
 
-    <form action="">
-      <h2>
+      <legend class="directSunlight">
         Does this place receive direct sunlight? Is it directly below the sun or
         close to an east/ west window?
-      </h2>
-      <ul>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">Yes</label>
-        </li>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">No</label>
-        </li>
-      </ul>
-    </form>
+      </legend>
+      <form id="formSunlight">
+        <ul>
+          <li>
+            <input type="radio" name="sunlight" id="directSunlight" class="input-form" required/>
+            <label for="directSunlight">Yes</label>
+          </li>
+          <li>
+            <input type="radio" name="sunlight" id="noDirectSunlight" class="input-form" required/>
+            <label for="noDirectSunlight">No</label>
+          </li>
+        </ul>  
+      </form>
 
-    <form action="">
-      <h2>Do you have pets?(cats or dogs)</h2>
-      <ul>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">Yes</label>
-        </li>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">No</label>
-        </li>
-      </ul>
-    </form>
+      <legend>Do you have pets?(cats or dogs)</legend>
+      <form id="formPets">
+        <ul>
+          <li>
+            <input type="radio" name="pets" id="hasPets" class="input-form" required/>
+            <label for="hasPets">Yes</label>
+          </li>
+          <li>
+            <input type="radio" name="pets" id="noHasPets" class="input-form" required/>
+            <label for="noHasPets">No</label>
+          </li>
+        </ul>
+      </form>
 
-    <form action="">
-      <h2>Do you tend to overwater or underwather your plants?</h2>
-      <ul>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">Overwater</label>
-        </li>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">Underwather</label>
-        </li>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">Neither / I don't know</label>
-        </li>
-      </ul>
-    </form>
+      <legend>Do you tend to overwater or underwather your plants?</legend>
+      <form id="formWaterLevel">
+        <ul>
+          <li>
+            <input type="radio" name="water" id="overwater" class="input-form" required/>
+            <label for="overwater">Overwater</label>
+          </li>
+          <li>
+            <input type="radio" name="water" id="underwather" class="input-form" required/>
+            <label for="underwather">Underwather</label>
+          </li>
+          <li>
+            <input type="radio" name="water" id="neither" class="input-form" required/>
+            <label for="neither">Neither / I don't know</label>
+          </li>
+        </ul>
+      </form>
 
-    <form action="">
-      <h2>How do youy define your style?</h2>
-      <ul>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">I like minimalism and material colors</label>
-        </li>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio">I like some decoration and simple colors</label>
-        </li>
-        <li>
-          <input type="radio" name="radio" id="radio-btn" required/>
-          <label for="radio"
-            >I like a lot of decoration and bright colors</label
-          >
-        </li>
-      </ul>
-    </form>
+      <legend>How do youy define your style?</legend>
+      <form id="formStyle">
+        <ul>
+          <li>
+            <input type="radio" name="style" id="minimalism" class="input-form" required/>
+            <label for="minimalism">I like minimalism and material colors</label>
+          </li>
+          <li>
+            <input type="radio" name="style" id="addDecoration" class="input-form" required/>
+            <label for="addDecoration">I like some decoration and simple colors</label>
+          </li>
+          <li>
+            <input type="radio" name="style" id="aLotDecoration" class="input-form" required/>
+            <label for="aLotDecoration">I like a lot of decoration and bright colors</label>
+          </li>
+        </ul>
+      </form>
 
-    <form action="">
-      <h2>Do you want to add anything else to your plant?</h2>
-      <ul>
-        <li>
-          <input type="checkbox" name="radio" id="radio-btn" />
-          <label for="checkbox">Pebbles</label>
-        </li>
-        <li>
-          <input type="checkbox" name="radio" id="radio-btn" />
-          <label for="checkbox">Moss pole</label>
-        </li>
-        <li>
-          <input type="checkbox" name="radio" id="radio-btn" />
-          <label for="checkbox">Smaller decorative plants</label>
-        </li>
-      </ul>
-    </form>
+      <legend>Do you want to add anything else to your plant?</legend>
+      <form id="formExtras">
+        <ul>
+          <li>
+            <input type="checkbox" name="somethingElse" id="pebbles" class="input-form" />
+            <label for="pebbles">Pebbles</label>
+          </li>
+          <li>
+            <input type="checkbox" name="somethingElse" id="mossPole" class="input-form" />
+            <label for="mossPole">Moss pole</label>
+          </li>
+          <li>
+            <input type="checkbox" name="somethingElse" id="smallDecorative" class="input-form" />
+            <label for="smallDecorative">Smaller decorative plants</label>
+          </li>
+        </ul>
+      </form>
+    </div>
 
-    <button class="btn get-plants">Get your plants!</button>
+    <button class="btn get-plants" id="getYourPlant" >Get your plants!</button>
     <button class="btn clear">Clear</button>
    </div>
+
+   <div id="card-container"></div>
   </body>
   <script type="module" src="./js/main.js"></script>
 </html>

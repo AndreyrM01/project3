@@ -22,21 +22,5 @@ module.exports = {
   },
   rules: {
     "import/extensions": [2, "always"],
-    "prettier/prettier": "error",
-    "lines-around-comment": [
-      "error",
-      {
-        "beforeBlockComment": true,
-        "afterBlockComment": true,
-        "beforeLineComment": true,
-        "afterLineComment": true,
-        "allowBlockStart": true,
-        "allowBlockEnd": true,
-        "allowObjectStart": true,
-        "allowObjectEnd": true,
-        "allowArrayStart": true,
-        "allowArrayEnd": true
-      }
-    ]
   },
 };
