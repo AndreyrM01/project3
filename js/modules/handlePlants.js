@@ -1,26 +1,46 @@
 import Plants from './plants.js';
-import separatePlantsByLight from './plantsConfig.js';
+import getPlanName from './plantsConfig.js';
 
 const getFormData = async () => {
-  const lightAmount = document.querySelector('input[name="light"]:checked').id;
-  const toxicPlant = document.querySelector('input[name="sunlight"]:checked').id;
-  const waterAmount = document.querySelector('input[name="water"]:checked').id;
-  const soil = document.querySelector('input[name="style"]:checked').id;
-  const potStyle = document.querySelector('input[name="pets"]:checked').id;
-  const extras = [...document.querySelectorAll('input[name="somethingElse"]:checked')].map(el => el.id);
+  const lightInput = document.querySelector('input[name="light"]:checked');
+  const sunlightInput = document.querySelector('input[name="sunlight"]:checked');
+  const waterInput = document.querySelector('input[name="water"]:checked');
+  const soilInput = document.querySelector('input[name="soil"]:checked');
+  const potStyleInput = document.querySelector('input[name="potStyle"]:checked');
+  const extrasInputs = document.querySelectorAll('input[name="extras"]:checked');
 
-  return {
-    lightAmount,
-    toxicPlant,
-    waterAmount,
-    soil,
-    potStyle,
-    extras
+  if (
+    !lightInput ||
+    !sunlightInput ||
+    !waterInput ||
+    !soilInput ||
+    !potStyleInput ||
+    extrasInputs.length === 0
+  ) {
+    return null;
+  }
+
+  const data = {
+    lightAmount: lightInput.value,
+    toxicPlant: sunlightInput.value,
+    waterAmount: waterInput.value,
+    soil: soilInput.value,
+    potStyle: potStyleInput.value,
+    extras: [...extrasInputs].map((input) => input.value),
   };
+
+  return data;
 };
 
 const setPlantName = ({ lightAmount, toxicPlant, waterAmount }) => {
-  const name = separatePlantsByLight[lightAmount][toxicPlant][waterAmount === 'overwater' ? 'overwater' : 'default'];
+  if (!lightAmount || !toxicPlant || !waterAmount) {
+    return null;
+  }
+
+  const plantData = getPlanName[lightAmount][toxicPlant];
+  const nameKey = waterAmount === 'overwater' ? 'overwater' : 'default';
+  const name = plantData[nameKey];
+
   return name;
 };
 
@@ -34,37 +54,37 @@ const renderResult = (name) => {
 };
 
 const plantsInfo = async () => {
-  const data = await getFormData();
+  const formData = await getFormData();
+
+  if (!formData) {
+    return;
+  }
+  const name = setPlantName(formData);
+
   const plant = new Plants();
-  const name = setPlantName(data);
 
   plant.setName(name);
-  plant.lightAmount(data.lightAmount);
-  plant.soilType(data.soil);
-  plant.potStyle(data.potStyle);
+  plant.lightAmount = formData.lightAmount; // Corrección aquí
+  plant.soilType(formData.soil);
+  plant.potStyle(formData.potStyle);
 
-  if (data.toxicPlant === 'non_toxic') {
+  if (formData.toxicPlant === 'non_toxic') {
     plant.withPets();
   } else {
     plant.noPets();
   }
 
-  if (data.waterAmount === 'overwater') {
+  if (formData.waterAmount === 'overwater') {
     plant.inClayPot();
   } else {
     plant.inCeramicPot();
   }
 
-  if (data.extras.length) {
-    plant.addExtras(data.extras);
+  if (formData.extras.length) {
+    plant.addExtras(formData.extras);
   }
 
   renderResult(name);
-
-  return plant;
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const submitButton = document.querySelector('button[type="submit"]');
-  submitButton.addEventListener('click', plantsInfo);
-});
+export default plantsInfo;

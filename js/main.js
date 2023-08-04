@@ -1,76 +1,72 @@
-// import handlePlantSelection from './modules/handlePlants.js';
-// import createDynamicCard from './modules/printPlant.js';
+import plantsInfo from './modules/handlePlants.js';
+import renderPlant from './modules/printPlant.js';
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const getPlantsButton = document.querySelector(".get-plants");
-//   const cardContainer = document.getElementById("card-container");
+const initPlant = async () => {
+  const plant = await plantsInfo();
+  renderPlant(plant);
+};
 
-//   getPlantsButton.addEventListener("click", () => {
-//     const selectedAnswers = handlePlantSelection(); // Obtener las respuestas seleccionadas
-//     createDynamicCard(selectedAnswers); // Crear el HTML del card con las respuestas seleccionadas
-//   });  
-// });
+initPlant();
 
-// createDynamicCard();
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("formPlants");
-  const getBtn = document.getElementById("getYourPlant");
-  const clearBtn = document.querySelector(".clear");
-  const cardContainer = document.getElementById("card-container");
-
-  function getSelectedOption(name) {
-    const selection = form.querySelector(`input[name="${name}"]:checked`);
-    return selection ? selection.value : null;
+document.addEventListener('DOMContentLoaded', () => {
+  const plantForm = document.getElementById('plant-form');
+  const clearButton = document.querySelector('.clear');
+  
+  if (plantForm) {
+    plantForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Evitar el envío del formulario
+    
+      const formData = new FormData(plantForm);
+      const plant = {
+        name: formData.get('plantName'),
+        soil: formData.get('soilType'),
+        // Agrega otras propiedades según tu formulario
+      };
+    
+      renderPlant(plant);
+    });
   }
-
-  function getRecommendedPlantType(place) {
-    if (place === "Inside, with some indirect light") {
-      return "Low Light Plants";
-    } else if (place === "Inside, with a lot indirect light") {
-      return "Medium Light Plants";
-    } else if (place === "Ouside") {
-      return "Outdoor Plants";
-    }
-    return "";
+  
+  if (clearButton) {
+    clearButton.addEventListener('click', () => {
+      if (plantForm) {
+        plantForm.reset();
+      }
+      const container = document.getElementById('card-container');
+      container.innerHTML = '';
+    });
   }
+});
 
-  function getPlantRecommendation() {
-    const placeSelection = getSelectedOption("light");
-    const sunlightSelection = getSelectedOption("sunlight");
-    const petsSelection = getSelectedOption("pets");
-    const waterSelection = getSelectedOption("water");
-    const styleSelection = getSelectedOption("style");
-    const extrasSelections = Array.from(document.querySelectorAll('input[name="somethingElse"]:checked')).map(el => el.value);
+const getYourPlantButton = document.getElementById('getYourPlant');
+const form = document.getElementById('formPlants');
 
-    if (!placeSelection || !sunlightSelection || !petsSelection || !waterSelection || !styleSelection) {
-      // Handle error or show a message to the user
-      return;
-    }
+getYourPlantButton.addEventListener('click', (event) => {
+  event.preventDefault();
 
-    const recommendedPlantType = getRecommendedPlantType(placeSelection);
-    const recommendedPlants = plantData[recommendedPlantType]; // Assuming 'plantData' is still available
+  // Recopilar los datos del formulario
+  const light = form.querySelector('input[name="light"]:checked').value;
+  const sunlight = form.querySelector('input[name="sunlight"]:checked').value;
+  const pets = form.querySelector('input[name="pets"]:checked').value;
+  const water = form.querySelector('input[name="water"]:checked').value;
+  const style = form.querySelector('input[name="style"]:checked').value;
 
-    const randomIndex = Math.floor(Math.random() * recommendedPlants.length);
-    const recommendedPlant = recommendedPlants[randomIndex];
+  const extras = [];
+  const checkboxes = form.querySelectorAll('input[name="somethingElse"]:checked');
+  checkboxes.forEach((checkbox) => {
+    extras.push(checkbox.value);
+  });
 
-    const recommendation = `
-      <div class="plant-info">
-        <h2>Plant Recommendation</h2>
-        <p>Name: ${recommendedPlant.name}</p>
-        <p>Soil Type: ${recommendedPlant.soilType}</p>
-        <p>Pot Details: ${recommendedPlant.potMaterial} pot with ${recommendedPlant.potStyle} decorations, ${recommendedPlant.potColor} color</p>
-        <p>Extras: ${recommendedPlant.extras.join(", ")}</p>
-      </div>
-    `;
+  // Crear el objeto de datos de planta usando la notación de propiedad abreviada
+  const plantData = {
+    light,
+    sunlight,
+    pets,
+    water,
+    style,
+    extras
+  };
 
-    cardContainer.innerHTML = recommendation;
-  }
-
-  function clearForm() {
-    form.reset();
-    cardContainer.innerHTML = "";
-  }
-
-  getBtn.addEventListener("click", getPlantRecommendation);
-  clearBtn.addEventListener("click", clearForm);
+  // Generar y mostrar la tarjeta de planta
+  renderPlant(plantData);
 });
