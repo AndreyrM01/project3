@@ -13,9 +13,9 @@
    <div class="form-container">
     <h1>Let us find the perfect pant for you</h1>
 
-    <div id="formPlants">
+    <form id="formPlants">
       <legend>Where will you place your plant?</legend>
-     <form id="formLight">
+     <div id="formLight">
       <ul name="light">
         <li>
           <input type="radio" name="light" id="lowLight" class="input-form" value="low" required/>
@@ -30,13 +30,13 @@
           <label for="outside">Ouside</label>
         </li>
       </ul>
-     </form>
+     </div>
 
       <legend class="directSunlight">
         Does this place receive direct sunlight? Is it directly below the sun or
         close to an east/ west window?
       </legend>
-      <form id="formSunlight">
+      <div id="formSunlight">
         <ul name="sunlight">
           <li>
             <input type="radio" name="sunlight" id="directSunlight" class="input-form" value="direct" required/>
@@ -47,10 +47,10 @@
             <label for="noDirectSunlight">No</label>
           </li>
         </ul>  
-      </form>
+      </div>
 
       <legend>Do you have pets?(cats or dogs)</legend>
-      <form id="formPets">
+      <div id="formPets">
         <ul name="pets">
           <li>
             <input type="radio" name="pets" id="hasPets" class="input-form" value="toxic" required/>
@@ -61,10 +61,10 @@
             <label for="noHasPets">No</label>
           </li>
         </ul>
-      </form>
+      </div>
 
       <legend>Do you tend to overwater or underwather your plants?</legend>
-      <form id="formWaterLevel">
+      <div id="formWaterLevel">
         <ul name="water">
           <li>
             <input type="radio" name="water" id="overwater" class="input-form" value="overwater" required/>
@@ -79,10 +79,10 @@
             <label for="neither">Neither / I don't know</label>
           </li>
         </ul>
-      </form>
+      </div>
 
       <legend>How do youy define your style?</legend>
-      <form id="formStyle">
+      <div id="formStyle">
         <ul name="style">
           <li>
             <input type="radio" name="style" id="minimalism" class="input-form" value="minimalism" required/>
@@ -97,10 +97,10 @@
             <label for="aLotDecoration">I like a lot of decoration and bright colors</label>
           </li>
         </ul>
-      </form>
+      </div>
 
       <legend>Do you want to add anything else to your plant?</legend>
-      <form id="formExtras">
+      <div id="formExtras">
         <ul name="somethingElse">
           <li>
             <input type="checkbox" name="somethingElse" id="pebbles" class="input-form" value="pebbles" />
@@ -115,8 +115,8 @@
             <label for="smallDecorative">Smaller decorative plants</label>
           </li>
         </ul>
-      </form>
-    </div>
+      </div>
+    </form>
 
     <button class="btn get-plants" id="getYourPlant" type="submit">Get your plants!</button>
     <button class="btn clear" type="reset">Clear</button>    
