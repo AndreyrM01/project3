@@ -24,14 +24,14 @@ class Plants {
     return this;
   }
 
-    clayPot() {
-    this.potMaterial = 'clay';
-    this.soil = 'drainage';
+  clayPot() {
+    this.potMaterial = "clay";
+    this.soil = "drainage";
     return this;
   }
-  
+
   ceramicPot() {
-    this.potMaterial = 'ceramic';
+    this.potMaterial = "ceramic";
     return this;
   }
 
@@ -46,4 +46,4 @@ class Plants {
   }
 }
 
-export default Plants ;
+export default Plants;

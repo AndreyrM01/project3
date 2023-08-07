@@ -1,15 +1,15 @@
-*{
-  font-family: 'Roboto Condensed', sans-serif;
+* {
+  font-family: "Roboto Condensed", sans-serif;
 }
 
-ul{
+ul {
   text-decoration: none;
 }
 
-li{
+li {
   list-style: none;
 }
 
-.form-container{
+.form-container {
   width: 45%;
 }

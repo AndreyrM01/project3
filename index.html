@@ -3,126 +3,245 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Document</title>
   </head>
   <body>
-   <div class="form-container">
-    <h1>Let us find the perfect pant for you</h1>
+    <div class="form-container">
+      <h1>Let us find the perfect pant for you</h1>
 
-    <form id="formPlants">
-      <legend>Where will you place your plant?</legend>
-     <div id="formLight">
-      <ul name="light">
-        <li>
-          <input type="radio" name="light" id="lowLight" class="input-form" value="low" required/>
-          <label for="lowLight">Inside, with some indirect light</label>
-        </li>
-        <li>
-          <input type="radio" name="light" id="mediumLight" class="input-form" value="moderate" required/>
-          <label for="mediumLight">Inside, with a lot indirect light</label>
-        </li>
-        <li>
-          <input type="radio" name="light" id="outside" class="input-form" value="high"required/>
-          <label for="outside">Ouside</label>
-        </li>
-      </ul>
-     </div>
+      <form id="formPlants">
+        <legend>Where will you place your plant?</legend>
+        <div id="formLight">
+          <ul name="light">
+            <li>
+              <input
+                type="radio"
+                name="light"
+                id="lowLight"
+                class="input-form"
+                value="low"
+                required
+              />
+              <label for="lowLight">Inside, with some indirect light</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="light"
+                id="mediumLight"
+                class="input-form"
+                value="moderate"
+                required
+              />
+              <label for="mediumLight">Inside, with a lot indirect light</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="light"
+                id="outside"
+                class="input-form"
+                value="high"
+                required
+              />
+              <label for="outside">Ouside</label>
+            </li>
+          </ul>
+        </div>
 
-      <legend class="directSunlight">
-        Does this place receive direct sunlight? Is it directly below the sun or
-        close to an east/ west window?
-      </legend>
-      <div id="formSunlight">
-        <ul name="sunlight">
-          <li>
-            <input type="radio" name="sunlight" id="directSunlight" class="input-form" value="direct" required/>
-            <label for="directSunlight">Yes</label>
-          </li>
-          <li>
-            <input type="radio" name="sunlight" id="noDirectSunlight" class="input-form" value="indirect" required/>
-            <label for="noDirectSunlight">No</label>
-          </li>
-        </ul>  
-      </div>
+        <legend class="directSunlight">
+          Does this place receive direct sunlight? Is it directly below the sun
+          or close to an east/ west window?
+        </legend>
+        <div id="formSunlight">
+          <ul name="sunlight">
+            <li>
+              <input
+                type="radio"
+                name="sunlight"
+                id="directSunlight"
+                class="input-form"
+                value="direct"
+                required
+              />
+              <label for="directSunlight">Yes</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="sunlight"
+                id="noDirectSunlight"
+                class="input-form"
+                value="indirect"
+                required
+              />
+              <label for="noDirectSunlight">No</label>
+            </li>
+          </ul>
+        </div>
 
-      <legend>Do you have pets?(cats or dogs)</legend>
-      <div id="formPets">
-        <ul name="pets">
-          <li>
-            <input type="radio" name="pets" id="hasPets" class="input-form" value="toxic" required/>
-            <label for="hasPets">Yes</label>
-          </li>
-          <li>
-            <input type="radio" name="pets" id="noHasPets" class="input-form" value="non_toxic" required/>
-            <label for="noHasPets">No</label>
-          </li>
-        </ul>
-      </div>
+        <legend>Do you have pets?(cats or dogs)</legend>
+        <div id="formPets">
+          <ul name="pets">
+            <li>
+              <input
+                type="radio"
+                name="pets"
+                id="hasPets"
+                class="input-form"
+                value="non_toxic"
+                required
+              />
+              <label for="hasPets">Yes</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="pets"
+                id="noHasPets"
+                class="input-form"
+                value="toxic"
+                required
+              />
+              <label for="noHasPets">No</label>
+            </li>
+          </ul>
+        </div>
 
-      <legend>Do you tend to overwater or underwather your plants?</legend>
-      <div id="formWaterLevel">
-        <ul name="water">
-          <li>
-            <input type="radio" name="water" id="overwater" class="input-form" value="overwater" required/>
-            <label for="overwater">Overwater</label>
-          </li>
-          <li>
-            <input type="radio" name="water" id="underwather" class="input-form" value="underwather" required/>
-            <label for="underwather">Underwather</label>
-          </li>
-          <li>
-            <input type="radio" name="water" id="neither" class="input-form" value="normal" required/>
-            <label for="neither">Neither / I don't know</label>
-          </li>
-        </ul>
-      </div>
+        <legend>Do you tend to overwater or underwather your plants?</legend>
+        <div id="formWaterLevel">
+          <ul name="water">
+            <li>
+              <input
+                type="radio"
+                name="water"
+                id="overwater"
+                class="input-form"
+                value="overwater"
+                required
+              />
+              <label for="overwater">Overwater</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="water"
+                id="underwather"
+                class="input-form"
+                value="underwather"
+                required
+              />
+              <label for="underwather">Underwather</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="water"
+                id="neither"
+                class="input-form"
+                value="normal"
+                required
+              />
+              <label for="neither">Neither / I don't know</label>
+            </li>
+          </ul>
+        </div>
 
-      <legend>How do youy define your style?</legend>
-      <div id="formStyle">
-        <ul name="style">
-          <li>
-            <input type="radio" name="style" id="minimalism" class="input-form" value="minimalism" required/>
-            <label for="minimalism">I like minimalism and material colors</label>
-          </li>
-          <li>
-            <input type="radio" name="style" id="addDecoration" class="input-form" value="some-decoration" required/>
-            <label for="addDecoration">I like some decoration and simple colors</label>
-          </li>
-          <li>
-            <input type="radio" name="style" id="aLotDecoration" class="input-form" value="a-lot-decoration" required/>
-            <label for="aLotDecoration">I like a lot of decoration and bright colors</label>
-          </li>
-        </ul>
-      </div>
+        <legend>How do youy define your style?</legend>
+        <div id="formStyle">
+          <ul name="style">
+            <li>
+              <input
+                type="radio"
+                name="style"
+                id="minimalism"
+                class="input-form"
+                value="minimalism"
+                required
+              />
+              <label for="minimalism"
+                >I like minimalism and material colors</label
+              >
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="style"
+                id="addDecoration"
+                class="input-form"
+                value="some-decoration"
+                required
+              />
+              <label for="addDecoration"
+                >I like some decoration and simple colors</label
+              >
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="style"
+                id="aLotDecoration"
+                class="input-form"
+                value="a-lot-decoration"
+                required
+              />
+              <label for="aLotDecoration"
+                >I like a lot of decoration and bright colors</label
+              >
+            </li>
+          </ul>
+        </div>
 
-      <legend>Do you want to add anything else to your plant?</legend>
-      <div id="formExtras">
-        <ul name="somethingElse">
-          <li>
-            <input type="checkbox" name="somethingElse" id="pebbles" class="input-form" value="pebbles" />
-            <label for="pebbles">Pebbles</label>
-          </li>
-          <li>
-            <input type="checkbox" name="somethingElse" id="mossPole" class="input-form" value="moss-pole" />
-            <label for="mossPole">Moss pole</label>
-          </li>
-          <li>
-            <input type="checkbox" name="somethingElse" id="smallDecorative" class="input-form" value="mini" />
-            <label for="smallDecorative">Smaller decorative plants</label>
-          </li>
-        </ul>
-      </div>
-    </form>
+        <legend>Do you want to add anything else to your plant?</legend>
+        <div id="formExtras">
+          <ul name="somethingElse">
+            <li>
+              <input
+                type="checkbox"
+                name="somethingElse"
+                id="pebbles"
+                class="input-form"
+                value="pebbles"
+              />
+              <label for="pebbles">Pebbles</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="somethingElse"
+                id="mossPole"
+                class="input-form"
+                value="moss-pole"
+              />
+              <label for="mossPole">Moss pole</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="somethingElse"
+                id="smallDecorative"
+                class="input-form"
+                value="mini"
+              />
+              <label for="smallDecorative">Smaller decorative plants</label>
+            </li>
+          </ul>
+        </div>
+        <button class="btn get-plants" id="getYourPlant" type="submit">
+          Get your plants!
+        </button>
+        <button class="btn clear" type="reset">Clear</button>
+      </form>
+    </div>
 
-    <button class="btn get-plants" id="getYourPlant" type="submit">Get your plants!</button>
-    <button class="btn clear" type="reset">Clear</button>    
-   </div>
-
-   <div id="card-container" class="plant-container"></div>
+    <div id="card-container" class="plant-container"></div>
   </body>
   <script type="module" src="./js/main.js"></script>
 </html>
