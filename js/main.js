@@ -1,28 +1,23 @@
-import getPlantData from "./modules/form.js";
-import renderPlant from "./modules/printPlant.js";
-
-const initPlant = async () => {
-  const plant = await getPlantData();
-  renderPlant(plant);
-};
-
-initPlant();
+import createPlantCard from "./modules/printPlant.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const plantForm = document.getElementById("plant-form");
+  const plantForm = document.getElementById("formPlants");
   const clearButton = document.querySelector(".clear");
 
   if (plantForm) {
     plantForm.addEventListener("submit", (event) => {
-      event.preventDefault(); // Evitar el envío del formulario
+      event.preventDefault();
 
       const formData = new FormData(plantForm);
       const plant = {
-        name: formData.get("plantName"),
-        soil: formData.get("soilType"),
+        lowLight: formData.get("lowLight"),
+        directSunlight: formData.get("directSunlight"),
+        hasPets: formData.get("hasPets"),
+        overwater: formData.get("overwater"),
+        somethingElse: formData.getAll("somethingElse"),
       };
 
-      renderPlant(plant);
+      createPlantCard(plant);
     });
   }
 
@@ -31,9 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (plantForm) {
         plantForm.reset();
       }
-      const container = document.getElementById("card-container");
+      const container = document.getElementById("cardContainer");
       container.innerHTML = "";
     });
   }
 });
-

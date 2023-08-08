@@ -17,8 +17,8 @@
       <h1>Let us find the perfect pant for you</h1>
 
       <form id="formPlants">
-        <legend>Where will you place your plant?</legend>
-        <div id="formLight">
+        <fieldset id="formLight">
+          <legend>Where will you place your plant?</legend>
           <ul name="light">
             <li>
               <input
@@ -54,13 +54,10 @@
               <label for="outside">Ouside</label>
             </li>
           </ul>
-        </div>
+        </fieldset>
 
-        <legend class="directSunlight">
-          Does this place receive direct sunlight? Is it directly below the sun
-          or close to an east/ west window?
-        </legend>
-        <div id="formSunlight">
+        <fieldset id="formSunlight">
+          <legend class="directSunlight">Does this place receive direct sunlight? Is it directly below the sunor close to an east/ west window?</legend>
           <ul name="sunlight">
             <li>
               <input
@@ -85,10 +82,10 @@
               <label for="noDirectSunlight">No</label>
             </li>
           </ul>
-        </div>
+        </fieldset>
 
-        <legend>Do you have pets?(cats or dogs)</legend>
-        <div id="formPets">
+        <fieldset id="formPets">
+          <legend>Do you have pets?(cats or dogs)</legend>
           <ul name="pets">
             <li>
               <input
@@ -113,10 +110,10 @@
               <label for="noHasPets">No</label>
             </li>
           </ul>
-        </div>
+        </fieldset>
 
-        <legend>Do you tend to overwater or underwather your plants?</legend>
-        <div id="formWaterLevel">
+        <fieldset id="formWaterLevel">
+          <legend>Do you tend to overwater or underwather your plants?</legend>
           <ul name="water">
             <li>
               <input
@@ -152,10 +149,10 @@
               <label for="neither">Neither / I don't know</label>
             </li>
           </ul>
-        </div>
+        </fieldset>
 
-        <legend>How do youy define your style?</legend>
-        <div id="formStyle">
+        <fieldset id="formStyle">
+          <legend>How do youy define your style?</legend>
           <ul name="style">
             <li>
               <input
@@ -197,10 +194,10 @@
               >
             </li>
           </ul>
-        </div>
+        </fieldset>
 
-        <legend>Do you want to add anything else to your plant?</legend>
-        <div id="formExtras">
+        <fieldset id="formExtras">
+          <legend>Do you want to add anything else to your plant?</legend>
           <ul name="somethingElse">
             <li>
               <input
@@ -233,15 +230,15 @@
               <label for="smallDecorative">Smaller decorative plants</label>
             </li>
           </ul>
-        </div>
+        </fieldset>
         <button class="btn get-plants" id="getYourPlant" type="submit">
           Get your plants!
         </button>
         <button class="btn clear" type="reset">Clear</button>
       </form>
     </div>
-
-    <div id="card-container" class="plant-container"></div>
+    <div id="cardContainer"></div>
+    
   </body>
   <script type="module" src="./js/main.js"></script>
 </html>
