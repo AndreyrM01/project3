@@ -1,6 +1,4 @@
-import createPlantCard from "./printPlant.js";
-
-function getFormData(formId) {
+function getFormData(formId, callback) {
   const form = document.getElementById(formId);
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -13,40 +11,8 @@ function getFormData(formId) {
     const extras = Array.from(extrasInputs).map(input => input.value);
 
     const formData = {light, sunlight, pets, water, extras};
-    return formData;
+
+    callback(formData);
   });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const plantForm = document.getElementById("formPlants");
-  const clearButton = document.querySelector(".clear");
-
-  if (plantForm) {
-    plantForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const formData = new FormData(plantForm);
-      const plant = {
-        lowLight: formData.get("lowLight"),
-        directSunlight: formData.get("directSunlight"),
-        hasPets: formData.get("hasPets"),
-        overwater: formData.get("overwater"),
-        somethingElse: formData.getAll("somethingElse"),
-      };
-
-      createPlantCard(plant);
-    });
-  }
-
-  if (clearButton) {
-    clearButton.addEventListener("click", () => {
-      if (plantForm) {
-        plantForm.reset();
-      }
-      const container = document.getElementById("cardContainer");
-      container.innerHTML = "";
-    });
-  }
-});
-
 export default getFormData;

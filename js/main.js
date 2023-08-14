@@ -1,33 +1,38 @@
-// import createPlantCard from "./modules/printPlant.js";
+import createPlantCard from "./modules/printPlant.js";
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   const plantForm = document.getElementById("formPlants");
 //   const clearButton = document.querySelector(".clear");
 
 //   if (plantForm) {
-//     plantForm.addEventListener("submit", (event) => {
-//       event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const plantForm = document.getElementById("formPlants");
+  const clearButton = document.querySelector(".clear");
 
-//       const formData = new FormData(plantForm);
-//       const plant = {
-//         lowLight: formData.get("lowLight"),
-//         directSunlight: formData.get("directSunlight"),
-//         hasPets: formData.get("hasPets"),
-//         overwater: formData.get("overwater"),
-//         somethingElse: formData.getAll("somethingElse"),
-//       };
+  if (plantForm) {
+    plantForm.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-//       createPlantCard(plant);
-//     });
-//   }
+      const formData = new FormData(plantForm);
+      const plant = {
+        lowLight: formData.get("lowLight"),
+        directSunlight: formData.get("directSunlight"),
+        hasPets: formData.get("hasPets"),
+        overwater: formData.get("overwater"),
+        somethingElse: formData.getAll("somethingElse"),
+      };
 
-//   if (clearButton) {
-//     clearButton.addEventListener("click", () => {
-//       if (plantForm) {
-//         plantForm.reset();
-//       }
-//       const container = document.getElementById("cardContainer");
-//       container.innerHTML = "";
-//     });
-//   }
-// });
+      createPlantCard(plant);
+    });
+  }
+
+  if (clearButton) {
+    clearButton.addEventListener("click", () => {
+      if (plantForm) {
+        plantForm.reset();
+      }
+      const container = document.getElementById("cardContainer");
+      container.innerHTML = "";
+    });
+  }
+});
