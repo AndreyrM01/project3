@@ -1,10 +1,7 @@
 import createPlantCard from "./modules/printPlant.js";
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const plantForm = document.getElementById("formPlants");
-//   const clearButton = document.querySelector(".clear");
+createPlantCard();
 
-//   if (plantForm) {
 document.addEventListener("DOMContentLoaded", () => {
   const plantForm = document.getElementById("formPlants");
   const clearButton = document.querySelector(".clear");
