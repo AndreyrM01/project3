@@ -36,7 +36,7 @@ function createPlantCard() {
         }
 
      card.innerHTML = `
-        <h2>Discover the perfect plant for you!</h2>
+        <h2>Discover the perfect plant for you is ...</h2>
         <p>Name: ${selectedPlant.name}</p>
         <img src="${plantImageSrc}" alt="${selectedPlant.name}">
         <img src="${extrasImageSrc}" alt="">

@@ -19,57 +19,6 @@ function getFromData(formId) {
   return data;
 }
 
-// function generatePlantData() {
-//   const { light, sunlight, pets, water, style, somethingElse } = getFromData('formPlants');
-
-//   const plantsData = new Plants()
-//     .lightAmountRequired(light)
-//     .soilNeeded(sunlight === 'direct' ? 'Composted soil' : 'Fertilized soil')
-//     .addExtras(somethingElse && Array.isArray(somethingElse) ? somethingElse : []);
-
-//   if (light === 'low' && pets === 'toxic') {
-//     if (water === 'overwater') {
-//       plantsData.setName('Peace Lily').noPets().clayPot();
-//     } else {
-//       plantsData.setName('Sansevieria').noPets();
-//     }
-//   } else if (light === 'low' && pets === 'non_toxic') {
-//     plantsData.setName('Boston Fern').noPets();
-//   } else if (light === 'moderate' && pets === 'toxic') {
-//     if (water === 'overwater') {
-//       plantsData.setName('Peace Lily').noPets().ceramicPot();
-//     } else {
-//       plantsData.setName('Aglaonema').noPets().ceramicPot();
-//     }
-//   } else if (light === 'moderate' && pets === 'non_toxic') {
-//     if (water === 'overwater') {
-//       plantsData.setName('Peace Lily').noPets().ceramicPot();
-//     } else {
-//       plantsData.setName('Monstera').noPets().ceramicPot();
-//     }
-//   } else if (light === 'high' && pets === 'toxic') {
-//     plantsData.setName('Aloe Vera').noPets().ceramicPot();
-//   } else if (light === 'high' && pets === 'non_toxic') {
-//     plantsData.setName('Cactus').noPets().ceramicPot();
-//   }
-
-//   const plantData = {
-//     name: plantsData.name,
-//     soil: plantsData.soil,
-//     pot: {
-//       material: plantsData.potMaterial,
-//       decoration: plantsData.potDecoration,
-//     },
-//     extras: plantsData.extras,
-//     images: {
-//       plant: plantsData.plantImage,
-//       soil: plantsData.soilImage,
-//       pot: plantsData.potImage,
-//     },
-//     style: style || 'minimalism',
-//   };
-//   return plantData;
-// }
 function generatePlantData() {
   const { light, sunlight, pets, water, style, somethingElse } = getFromData('formPlants');
 
@@ -102,7 +51,7 @@ function generatePlantData() {
     plantsData.setName('Aloe Vera').noPets().ceramicPot();
   } else if (light === 'high' && pets === 'non_toxic') {
     plantsData.setName('Cactus').noPets().ceramicPot();
-  } if (somethingElse === 'miniPlants') {
+  } if (somethingElse === 'mini') {
     plantsData.addExtras(['mini-plants']);
   } else if (somethingElse === 'moss-pole') {
     plantsData.addExtras(['moss-pole']);
