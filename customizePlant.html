@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="stylesheet" href="./css/styles.css" />
+          <title>Document</title>
+        </head>
+<body>
+    <div class="formCutomize">
+        <h1>Customize your plant!</h1>
+        <form id="customizeForm">
+            <fieldset id="potMaterial">
+                <legend>Choose your pot:</legend>
+                <span>Pot material</span>
+                <ul class="flex">
+                    <li><input type="radio" name="clay" id="clay" value="clay"><label for="clay">Clay</label></li>
+                    <li><input type="radio" name="ceramic" id="ceramic" value="ceramic"><label for="ceramic">Ceramic</label></li>
+                </ul>
+            </fieldset>
+
+            <fieldset id="potDecoration">
+                <span>Pot decorations</span>
+                <ul class="flex">
+                    <li><input type="radio" name="decoration" id="decorationNo"><label for="decorationNo">No</label></li>
+                    <li><input type="radio" name="decoration" id="decorationSi"><label for="decorationNo">Si</label></li>
+                </ul>
+            </fieldset>
+
+            <fieldset id="potColor">
+                <span>Pot color</span>
+                <ul class="flex">
+                    <li><input type="radio" name="color" id="colorNo"><label for="colorNo">No</label></li>
+                    <li><input type="radio" name="color" id="colorSi"><label for="colorNo">Si</label></li>
+                </ul>
+                <ul>
+                    <input type="radio" class="blue" name="redButton" id="redButton">
+                    <input type="radio" class="pink" name="pinkButton" id="pinkButton">
+                    <input type="radio" class="green" name="greenButton" id="greenButton">
+                    <input type="radio" class="purple" name="purpleButton" id="purpleButton">
+                </ul>
+            </fieldset>
+
+            <fieldset id="plantSoil">
+                <legend>Choose your soil:</legend>
+                <ul>
+                    <li><input type="radio" name="basic" id="basic"><label for="basic">Basic composted soil</label></li>
+                    <li><input type="radio" name="premium" id="premium"><label for="premium">Premium fertilized soil</label></li>
+                    <li><input type="radio" name="drainage" id="drainage"><label for="drainage">Easy drainage soil</label></li>
+                </ul>
+            </fieldset>
+
+            <fieldset id="choosePlant">
+                <legend>Choose your plant:</legend>
+
+                <select name="plants" id="plantsSelect">
+                <option value="hidden"><span class="hidden">Chooose your plants</span></option>
+                <option value="plant1">Planta 1</option>
+ 2                <option value="plant2">Planta 2</option>
+                <option value="plant3">Planta 3</option>
+                </select>
+            </fieldset>
+
+            <fieldset id="chooseExtras">
+                <legend>Choose your extras:</legend>
+                <ul name="extrasForYou">
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="extrasForYou"
+                      id="mossPole"
+                      class="input-form"
+                      value="moss-pole"
+                    />
+                    <label for="mossPole">Moss pole</label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="extrasForYou"
+                      id="pebbles"
+                      class="input-form"
+                      value="pebbles"
+                    />
+                    <label for="pebbles">Pebbles</label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="extrasForYou"
+                      id="smallDecorative"
+                      class="input-form"
+                      value="mini"
+                    />
+                    <label for="miniPlants">Smaller decorative plants</label>
+                  </li>
+                </ul>
+              </fieldset>
+        </form>
+    </div>
+</body>
+</html>

@@ -10,7 +10,7 @@ li {
   list-style: none;
 }
 
-fieldset{
+fieldset {
   border: none;
 }
 
@@ -19,15 +19,15 @@ fieldset{
   height: 2rem;
 }
 
-.card_container{
+.card_container {
   display: grid;
   position: absolute;
   left: 970px;
-  top: 111px;
+  top: 50px;
   margin-bottom: 0;
 }
 
-.imagesContainer{
+.imagesContainer {
   display: flex;
   position: relative;
   justify-content: center;
@@ -37,11 +37,11 @@ fieldset{
   margin-bottom: -300px;
 }
 
-.img{
+.img {
   width: 200px;
 }
 
-.plantTitle{
+.plantTitle {
   background-color: blue;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -52,7 +52,7 @@ fieldset{
   color: #ffffff;
 }
 
-.firstTitle{
+.firstTitle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,36 +61,37 @@ fieldset{
   bottom: 10px;
 }
 
-.card_title{
+.card_title {
   font-size: 18px;
 }
 
-.plant{
+.plant {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  z-index: 1;
+}
+
+.extras {
   display: flex;
   position: absolute;
   top: 5px;
 }
 
-.extras{
-  display: flex;
-  position: absolute;
-  top: 5px;
-}
-
-.pot{
+.pot {
   display: flex;
   position: absolute;
   top: 5px;
   z-index: -1;
 }
 
-.soil{
+.soil {
   display: flex;
   position: absolute;
   top: 5px;
 }
 
-.cardInfo{
+.cardInfo {
   display: grid;
   position: relative;
   top: 270px;
@@ -101,19 +102,55 @@ fieldset{
   color: #ffffff;
 }
 
-.btn{
+.btn {
   width: 200px;
   height: 50px;
   margin-left: 25px;
   border-radius: 10px;
 }
 
-.get-plants{
+.get-plants {
   background-color: blue;
   color: #ffffff;
 }
 
-.clear{
+.clear {
   border: 1px solid blue;
   color: blue;
+}
+
+.customize{
+  display: flex;
+  position: absolute;
+  left: 1048px;
+  bottom: -74px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Customize your plant */
+
+.flex{
+  display: flex;
+}
+
+.blue{
+  accent-color: blue;
+}
+
+.pink{
+  accent-color: red;
+}
+
+.green{
+  accent-color: green;
+}
+
+.purple{
+  accent-color: purple;
+}
+
+.hidden{
+  visibility: hidden;
 }

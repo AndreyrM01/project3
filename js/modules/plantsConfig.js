@@ -26,8 +26,8 @@ function generatePlantData() {
     .lightAmountRequired(light)
     .soilNeeded(sunlight === 'direct' ? 'Composted soil' : 'Fertilized soil')
     .addExtras(somethingElse && Array.isArray(somethingElse) ? somethingElse : []);
-    let soilType = '';
-    let soilImage = '';
+  let soilType = '';
+  let soilImage = '';
 
   if (light === 'low' && pets === 'toxic') {
     if (water === 'overwater') {
@@ -53,13 +53,20 @@ function generatePlantData() {
     plantsData.setName('Aloe Vera').noPets().ceramicPot();
   } else if (light === 'high' && pets === 'non_toxic') {
     plantsData.setName('Cactus').noPets().ceramicPot();
-  } if (somethingElse.includes('mini')) {
+  }
+  
+  if (somethingElse.includes('mini')) {
     plantsData.addExtras(['mini-plants']);
   } else if (somethingElse.includes('moss-pole')) {
     plantsData.addExtras(['moss-pole']);
   } else if (somethingElse.includes('pebbles')) {
     plantsData.addExtras(['pebbles']);
-  }if (sunlight === 'direct') {
+  }
+  
+  const extras = plantsData.extras || [];
+  
+
+  if (sunlight === 'direct') {
     soilType = 'Composted Soil';
     soilImage = '/images/soil/soil-composted.png';
   } else if (sunlight === 'indirect') {
@@ -69,28 +76,26 @@ function generatePlantData() {
     soilType = 'Standard Soil';
     soilImage = '/images/soil/soil-standard.png';
   }
-  
 
-const plantData = {
-  name: plantsData.name,
-  soil: plantsData.soil,
-  pot: {
-    material: water === 'overwater' ? 'clay' : 'ceramic',
-    decoration: style || 'minimalism' || 'addDecoration' || 'aLotDecoration',
-  },
-  extras: plantsData.extras,
-  images: {
-    plant: plantsData.plantImage,
-    soil: plantsData.soilImage,
-    pot: plantsData.potImage
-  },
-  style: style || 'minimalism',
-  soilType,
-  soilImage,
-  
-};
+  const plantData = {
+    name: plantsData.name,
+    soil: plantsData.soil,
+    pot: {
+      material: water === 'overwater' ? 'clay' : 'ceramic',
+      decoration: style || 'minimalism' || 'addDecoration' || 'aLotDecoration',
+    },
+    extras: Array.isArray(extras) ? extras.map(extra => extra.toLowerCase()) : null,
+    images: {
+      plant: plantsData.plantImage,
+      soil: plantsData.soilImage,
+      pot: plantsData.potImage
+    },
+    style: style || 'minimalism',
+    soilType,
+    soilImage
+  };
 
-return plantData;
+  return plantData;
 }
 
 export { generatePlantData, getFromData };
