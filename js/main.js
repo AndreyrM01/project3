@@ -4,11 +4,14 @@ createPlantCard();
 
 document.addEventListener("DOMContentLoaded", () => {
   const plantForm = document.getElementById("formPlants");
+  const submitButton = plantForm.querySelector("[type='submit']");
   const clearButton = document.querySelector(".clear");
 
   if (plantForm) {
     plantForm.addEventListener("submit", (event) => {
       event.preventDefault();
+
+      submitButton.disabled = true;
 
       const formData = new FormData(plantForm);
       const plant = {
@@ -28,8 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (plantForm) {
         plantForm.reset();
       }
+
       const container = document.getElementById("cardContainer");
       container.innerHTML = "";
+      submitButton.disabled = false;
     });
   }
 });

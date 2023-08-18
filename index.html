@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Document</title>
   </head>
@@ -51,13 +48,16 @@
                 value="high"
                 required
               />
-              <label for="outside">Ouside</label>
+              <label for="outside">Outside</label>
             </li>
           </ul>
         </fieldset>
 
         <fieldset id="formSunlight">
-          <legend class="directSunlight">Does this place receive direct sunlight? Is it directly below the sunor close to an east/ west window?</legend>
+          <legend class="directSunlight">
+            Does this place receive direct sunlight? Is it directly below the
+            sunor close to an east/ west window?
+          </legend>
           <ul name="sunlight">
             <li>
               <input
@@ -173,7 +173,7 @@
                 name="style"
                 id="addDecoration"
                 class="input-form"
-                value="some-decoration"
+                value="addDecoration"
                 required
               />
               <label for="addDecoration"
@@ -186,7 +186,7 @@
                 name="style"
                 id="aLotDecoration"
                 class="input-form"
-                value="a-lot-decoration"
+                value="aLotDecoration"
                 required
               />
               <label for="aLotDecoration"
@@ -236,8 +236,8 @@
         </button>
         <button class="btn clear" type="reset">Clear</button>
       </form>
+      <div id="cardContainer"></div>
     </div>
-    <div id="cardContainer"></div>
   </body>
   <script type="module" src="./js/main.js"></script>
 </html>

@@ -5,6 +5,8 @@ function createPlantCard() {
   const cardContainer = document.getElementById('cardContainer');
 
   getFormData('formPlants', (formData) => {
+    cardContainer.innerHTML = '';
+    
     const selectedPlant = generatePlantData(formData);
 
     if (selectedPlant) {
@@ -25,27 +27,64 @@ function createPlantCard() {
       }
 
       let extrasImageSrc = '';
-      let potImageSrc = '';
 
       if (Array.isArray(selectedPlant.extras)) {
         extrasImageSrc = `/images/extras/${selectedPlant.extras.join('-').toLowerCase()}.png`;
       }
   
-        if (selectedPlant.pot.material) {
-          potImageSrc = `/images/pots/simple-${selectedPlant.pot.material.toLowerCase().replace(' ', '-')}-pot.png`;
+      let potImageSrc = '';
+      if (selectedPlant.pot.material) {
+        const potMaterial = selectedPlant.pot.material.toLowerCase().replace(' ', '-');
+        const potDecoration = selectedPlant.pot.decoration;
+        
+        switch (potDecoration) {
+          case 'minimalism':
+            potImageSrc = `/images/pots/simple-${potMaterial}-pot.png`;
+            break;
+          case 'addDecoration':
+            potImageSrc = `/images/pots/simple-${potMaterial}-pot-decorated.png`;
+            break;
+          case 'aLotDecoration':
+            potImageSrc = `/images/pots/painted-${potMaterial}-pot-decorated.png`;
+            break;
+          default:
+            break;
         }
+      }
 
-     card.innerHTML = `
-        <h2>Discover the perfect plant for you is ...</h2>
-        <p>Name: ${selectedPlant.name}</p>
-        <img src="${plantImageSrc}" alt="${selectedPlant.name}">
-        <img src="${extrasImageSrc}" alt="">
-        <img src="${potImageSrc}" alt="">
-        <p>Name: ${selectedPlant.name}</p>
-        <p>Soil: ${selectedPlant.soil}</p>
-        <p>Pot Material: ${selectedPlant.pot.material}</p>
-        <p>Pot Decoration: ${selectedPlant.pot.decoration}</p>
-        <p>Extras: ${selectedPlant.extras}</p>
+      let soilImageSrc = '';
+      switch (selectedPlant.soilType.toLowerCase()) {
+        case 'composted soil':
+          soilImageSrc = '/images/soil/soil-composted.png';
+          break;
+        case 'fertilized soil':
+          soilImageSrc = '/images/soil/soil-fertilized.png';
+          break;
+        default:
+          soilImageSrc = '/images/soil/soil-standard.png';
+          break;
+      }
+
+      card.innerHTML = `
+        <div class="card_container">
+          <div class="plantTitle">
+            <h2 class="card_title">Discover the perfect plant for you is ...</h2>
+            <p class="firstTitle">${selectedPlant.name}</p>
+          </div>
+          <div class="imagesContainer">
+          <img src="${plantImageSrc}" alt="${selectedPlant.name}" class="img plant">
+          <img src="${extrasImageSrc}" alt="" class="img extras">
+          <img src="${soilImageSrc}" alt="${selectedPlant.soilType}" class="img soil">
+          <img src="${potImageSrc}" alt="" class="img pot">
+          </div>
+          <ul class="cardInfo">
+            <li><p class="pInfo">Name: <span>${selectedPlant.name.charAt(0).toUpperCase() + selectedPlant.name.substring(1)}</span> </p></li>
+            <li><p class="pInfo">Soil: <span>${selectedPlant.soilType.charAt(0).toUpperCase() + selectedPlant.soilType.substring(1)}</span> </p></li>
+            <li><p class="pInfo">Pot Material: <span>${selectedPlant.pot.material.charAt(0).toUpperCase() + selectedPlant.pot.material.substring(1)}</span> </p></li>
+            <li><p class="pInfo">Decoration: <span>${selectedPlant.pot.decoration.charAt(0).toUpperCase() + selectedPlant.pot.decoration.substring(1)}</span></p></li>
+            <li><p class="pInfo">Extras: <span>${(Array.isArray(selectedPlant.extras) ? selectedPlant.extras.map(extra => `${extra.charAt(0).toUpperCase()}${extra.substring(1)}`).join(', ') : '')}</span> </p></li>
+          </ul>
+        </div>
       `;
 
       cardContainer.appendChild(card);
