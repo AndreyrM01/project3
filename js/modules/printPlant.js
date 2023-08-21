@@ -1,5 +1,6 @@
 import { generatePlantData } from "./plantsConfig.js";
 import getFormData from "./form.js";
+import storage from "./localStorage.js";
 
 function createPlantCard() {
   const cardContainer = document.getElementById("cardContainer");
@@ -118,5 +119,14 @@ function createPlantCard() {
     }
   });
 }
+
+document.getElementById('cardContainer').addEventListener('click', (event) => {
+  if (event.target.id === 'customize') {
+    const cardElement = document.querySelector('.card_container');
+    storage.setItem('originalCard', cardElement.innerHTML);
+  }
+});
+
+
 
 export default createPlantCard;

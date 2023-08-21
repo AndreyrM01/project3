@@ -21,39 +21,39 @@
                 <legend>Choose your pot:</legend>
                 <span>Pot material</span>
                 <ul class="flex">
-                    <li><input type="radio" name="clay" id="clay" value="clay"><label for="clay">Clay</label></li>
-                    <li><input type="radio" name="ceramic" id="ceramic" value="ceramic"><label for="ceramic">Ceramic</label></li>
+                    <li><input type="radio" name="clay" id="clay" value="clay" required><label for="clay">Clay</label></li>
+                    <li><input type="radio" name="ceramic" id="ceramic" value="ceramic" required><label for="ceramic">Ceramic</label></li>
                 </ul>
             </fieldset>
 
             <fieldset id="potDecoration">
                 <span>Pot decorations</span>
                 <ul class="flex">
-                    <li><input type="radio" name="decoration" id="decorationNo"><label for="decorationNo">No</label></li>
-                    <li><input type="radio" name="decoration" id="decorationSi"><label for="decorationNo">Si</label></li>
+                    <li><input type="radio" name="decoration" id="decorationNo" required><label for="decorationNo">No</label></li>
+                    <li><input type="radio" name="decoration" id="decorationSi" required><label for="decorationNo">Si</label></li>
                 </ul>
             </fieldset>
 
             <fieldset id="potColor">
                 <span>Pot color</span>
                 <ul class="flex">
-                    <li><input type="radio" name="color" id="colorNo"><label for="colorNo">No</label></li>
-                    <li><input type="radio" name="color" id="colorSi"><label for="colorNo">Si</label></li>
+                    <li><input type="radio" name="color" id="colorNo" required><label for="colorNo">No</label></li>
+                    <li><input type="radio" name="color" id="colorSi" required><label for="colorNo">Si</label></li>
                 </ul>
                 <ul>
-                    <input type="radio" class="blue" name="redButton" id="redButton">
-                    <input type="radio" class="pink" name="pinkButton" id="pinkButton">
-                    <input type="radio" class="green" name="greenButton" id="greenButton">
-                    <input type="radio" class="purple" name="purpleButton" id="purpleButton">
+                    <input type="radio" class="blue" name="redButton" id="redButton" required>
+                    <input type="radio" class="pink" name="pinkButton" id="pinkButton" required>
+                    <input type="radio" class="green" name="greenButton" id="greenButton" required>
+                    <input type="radio" class="purple" name="purpleButton" id="purpleButton" required>
                 </ul>
             </fieldset>
 
             <fieldset id="plantSoil">
                 <legend>Choose your soil:</legend>
                 <ul>
-                    <li><input type="radio" name="basic" id="basic"><label for="basic">Basic composted soil</label></li>
-                    <li><input type="radio" name="premium" id="premium"><label for="premium">Premium fertilized soil</label></li>
-                    <li><input type="radio" name="drainage" id="drainage"><label for="drainage">Easy drainage soil</label></li>
+                    <li><input type="radio" name="basic" id="basic" required><label for="basic">Basic composted soil</label></li>
+                    <li><input type="radio" name="premium" id="premium" required><label for="premium">Premium fertilized soil</label></li>
+                    <li><input type="radio" name="drainage" id="drainage" required><label for="drainage">Easy drainage soil</label></li>
                 </ul>
             </fieldset>
 
@@ -62,9 +62,13 @@
 
                 <select name="plants" id="plantsSelect">
                 <option value="hidden"><span class="hidden">Chooose your plants</span></option>
-                <option value="plant1">Planta 1</option>
- 2                <option value="plant2">Planta 2</option>
-                <option value="plant3">Planta 3</option>
+                <option value="plant1">Sansevieria</option>
+                <option value="plant2">Boston Fern</option>
+                <option value="plant3">Aglaonema </option>
+                <option value="plant3">Monstera</option>
+                <option value="plant3">Aloe Vera</option>
+                <option value="plant3">Cactus</option>
+                <option value="plant3">Peace Lily</option>
                 </select>
             </fieldset>
 
@@ -78,6 +82,7 @@
                       id="mossPole"
                       class="input-form"
                       value="moss-pole"
+                      required
                     />
                     <label for="mossPole">Moss pole</label>
                   </li>
@@ -88,6 +93,7 @@
                       id="pebbles"
                       class="input-form"
                       value="pebbles"
+                      required
                     />
                     <label for="pebbles">Pebbles</label>
                   </li>
@@ -98,6 +104,7 @@
                       id="smallDecorative"
                       class="input-form"
                       value="mini"
+                      required
                     />
                     <label for="miniPlants">Smaller decorative plants</label>
                   </li>
@@ -105,5 +112,7 @@
               </fieldset>
         </form>
     </div>
+    <div id="cardContainer"></div>
 </body>
+<script type="module" src="./js/previewMain.js"></script>
 </html>
