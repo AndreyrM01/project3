@@ -1,5 +1,8 @@
 import createCustomizableCard from "./modules/previewCard.js";
+import Card from "./modules/previewOptions.js";
+import Publisher from "./modules/Publisher.js";
 
-// Call the createCustomizableCard function to create the card
+const card = new Card('cardContainer');
+const potChange = new Publisher();
+
 createCustomizableCard();
-
