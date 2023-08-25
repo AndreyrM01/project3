@@ -1,8 +1,17 @@
 import createCustomizableCard from "./modules/previewCard.js";
-import Card from "./modules/previewOptions.js";
-import Publisher from "./modules/Publisher.js";
+import potChange from "./modules/potChanges.js";
 
-const card = new Card('cardContainer');
-const potChange = new Publisher();
+const card = createCustomizableCard();
+
+potChange.subscribe(() => {
+  card.update();
+});
+
+document.querySelectorAll('input[type="radio"], select').forEach((input) => {
+  input.addEventListener('change', (event) => {
+    const { name, value } = event.target;
+    potChange.publish({ type: name, value });
+  });
+});
 
 createCustomizableCard();

@@ -16,7 +16,6 @@ function createPlantCard() {
 
       let plantImageSrc = "";
 
-      // Set the image source based on the selected plant
       if (selectedPlant.name === "Peace Lily") {
         plantImageSrc = "../../images/plants/plant-peace-lily.png";
       } else if (selectedPlant.name === "Boston Fern") {

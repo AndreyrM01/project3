@@ -4,6 +4,10 @@ class Card {
   }
 
   update(update) {
+    if (!update || !update.type) {
+      throw new Error("Invalid update object. 'type' property is missing.");
+    }
+
     switch (update.type) {
       case 'material':
         this.updateMaterial(update.value);
@@ -14,7 +18,17 @@ class Card {
       case 'decoration':
         this.updateDecoration(update.value);
         break;
+      case 'soil':
+        this.updateSoil(update.value);
+        break;
+      case 'plant':
+        this.updatePlant(update.value);
+        break;
+      case 'extras':
+        this.updateExtras(update.value);
+        break;
       default:
+        throw new Error(`Invalid update type: ${update.type}`);
     }
   }
 
@@ -30,6 +44,21 @@ class Card {
 
   updateDecoration(decoration) {
     this.cardElement.querySelector('.decoration').textContent = decoration;
+    this.updatePotImage();
+  }
+
+  updateSoil(soil) {
+    this.cardElement.querySelector('.soil').textContent = soil;
+    this.updatePotImage();
+  }
+
+  updatePlant(plant) {
+    this.cardElement.querySelector('.plant').textContent = plant;
+    this.updatePotImage();
+  }
+
+  updateExtras(extras) {
+    this.cardElement.querySelector('.extras').textContent = extras;
     this.updatePotImage();
   }
 

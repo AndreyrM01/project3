@@ -17,6 +17,14 @@ const handlePotDecoration = (event) => {
   potChange.publish({ type: 'decoration', value: newDecoration });
 }
 
+const handleInputChange = (event) => {
+  const { name, value } = event.target;
+  potChange.publish({ type: name, value });
+}
+
+document.querySelectorAll('input[type="radio"], select').forEach((input) => {
+  input.addEventListener('change', handleInputChange);
+});
 
 document.getElementById('clay').addEventListener('change', handlePotMaterialChange);
 document.getElementById('ceramic').addEventListener('change', handlePotMaterialChange);
