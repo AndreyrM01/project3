@@ -19,25 +19,15 @@
 // export default Publisher;
 class Publisher {
   constructor() {
-    this.observers = [];
+    this.subscribers = [];
   }
 
-  subscribe(observer) {
-    this.observers.push(observer);
-  }
-
-  unsubscribe(observer) {
-    this.observers = this.observers.filter(obs => obs !== observer);
-  }
-
-  notify(data) {
-    this.observers.forEach(observer => {
-      observer.update(data);
-    });
+  subscribe(fn) {
+    this.subscribers.push(fn);
   }
   
   publish(data) {
-    this.subscribers.forEach((sub) => sub(data));
+    this.subscribers.forEach((fn) => fn(data));
   }
 
 }

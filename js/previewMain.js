@@ -1,5 +1,11 @@
-import createCustomizableCard from "./modules/previewCard.js";
+// En "previewMain.js"
+import { createCustomizableCard } from "./modules/previewCard.js";
 import potChange from "./modules/potChanges.js";
+import initializeCardUpdater from "./modules/updateCard.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  initializeCardUpdater();
+});
 
 const card = createCustomizableCard();
 
@@ -13,5 +19,3 @@ document.querySelectorAll('input[type="radio"], select').forEach((input) => {
     potChange.publish({ type: name, value });
   });
 });
-
-createCustomizableCard();

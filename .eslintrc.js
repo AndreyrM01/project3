@@ -22,5 +22,6 @@ module.exports = {
   },
   rules: {
     "import/extensions": [2, "always"],
+    "consistent-return": 0,
   },
 };
